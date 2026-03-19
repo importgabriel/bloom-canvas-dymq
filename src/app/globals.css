@@ -1,3 +1,149 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ============================================================
+   Flower Animations
+   ============================================================ */
+
+/* Bloom entrance — petals spring open from the center */
+@keyframes bloom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.04) rotate(-30deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.08) rotate(4deg);
+  }
+  78% {
+    transform: scale(0.95) rotate(-2deg);
+  }
+  90% {
+    transform: scale(1.02) rotate(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Gentle up-and-down float for the whole flower */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+/* Stem + flower swaying in a breeze */
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(-2.5deg);
+  }
+  50% {
+    transform: rotate(2.5deg);
+  }
+}
+
+/* Petal brightness shimmer */
+@keyframes shimmer {
+  0%, 100% {
+    opacity: 0.86;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.2);
+  }
+}
+
+/* Center orb gentle pulse */
+@keyframes center-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.13);
+  }
+}
+
+/* Stamen dot sparkle */
+@keyframes stamen-sparkle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 1;
+  }
+}
+
+/* Leaf subtle shimmer */
+@keyframes leaf-shimmer {
+  0%, 100% {
+    opacity: 0.9;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.12);
+  }
+}
+
+/* Halo glow breathe */
+@keyframes halo-breathe {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.08);
+  }
+}
+
+/* ============================================================
+   Flower Element Classes
+   ============================================================ */
+
+.flower-float {
+  animation: float 7s ease-in-out infinite;
+}
+
+.flower-sway {
+  animation: sway 5.5s ease-in-out infinite;
+  transform-origin: 200px 458px;
+}
+
+.flower-bloom {
+  animation: bloom-in 1.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  transform-origin: 200px 188px;
+}
+
+.petal-shimmer {
+  animation: shimmer 3.8s ease-in-out infinite;
+}
+
+.center-pulse {
+  animation: center-pulse 3s ease-in-out infinite;
+  transform-origin: 200px 188px;
+}
+
+.stamen-sparkle {
+  transform-box: fill-box;
+  transform-origin: center center;
+  animation: stamen-sparkle 2.2s ease-in-out infinite;
+}
+
+.leaf-shimmer {
+  animation: leaf-shimmer 5s ease-in-out infinite;
+}
+
+.halo-breathe {
+  transform-origin: 200px 188px;
+  animation: halo-breathe 4s ease-in-out infinite;
+}
